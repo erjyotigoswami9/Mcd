@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+
+        }
+       .parentDiv{
+          display : grid ;
+          grid-template-columns: repeat(2,1fr);
+       }
+       .parentDiv img{
+          width: 200px;
+          height: 200px;
+          /* border: 1px solid black; */
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+       }
+       .leftDiv .leftDiv1{
+        display: flex;
+        text-align: justify;
+       }
+       .leftDiv1>div{
+        display: flex;
+        flex-direction: column;
+        font-size: 25px;
+       }
+       .leftDiv1>div>p:nth-child(1){
+        margin-top: 30px;
+       }
+       .leftDiv1>div>p:nth-child(2){
+        margin-top: 10px;
+        text-align: justify;
+       }
+       .leftDiv1>div>input{
+        width: 70px;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+        text-align: justify;
+       }
+       .rightDiv{
+        display: flex;
+        flex-direction: column;
+       }
+       .rightDiv .rightDiv1{
+        display: flex;
+        flex-direction: row;
+       }
+       .rightDiv1{
+        text-align: justify;
+        font-size: 25px;
+       }
+       .rightDiv1>div>p:nth-child(1){
+        margin-top: 30px;
+       }
+       .rightDiv1>div>p:nth-child(2){
+        margin-top: 10px;
+        text-align: justify;
+       }
+       .rightDiv1>div>input{
+        width: 70px;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+        text-align: justify;
+       }
+       .finalDiv{
+        margin: auto;
+        text-align: center;
+       }
+       .finaldiv3{
+        margin: auto;
+        text-align: center;
+       }
+       .btnsubmit{
+        width: 400px;
+        height: 70px;
+        background-color: rgba(107, 219, 107, 0.505);
+        color: white;
+        border: none;
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+       }
+       .btnsubmit:hover{
+        cursor: pointer;
+        color: rgba(32, 96, 149, 0.484);
+        background-color: rgba(231, 84, 231, 0.323);
+        letter-spacing: 2px;
+       }
+       .alrtpage{
+        width: 350px;
+        height: fit-content;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        color: black;
+        background-color: rgba(211, 211, 211, 0.142);
+        text-align: center;
+        margin: auto;
+       
+       
+       }
+       .videoAnimation{
+        animation: videoAni 1s infinite;
+       }  
+       /* @keyframes videoAni {
+        0%   {margin-top: 0px; margin-left: 0px; }
+        25%  {margin-top: 0px; margin-left: 30%; } */
+        /* 50%  {margin-top: 0px; margin-left: 70%; }
+        75%  {margin-top: 0px; margin-left: 0px; } */
+        /* 100% {margin-top: 0px; margin-left: 0px; }
+       }
+       @keyframes videoAni2 {
+        0%   {margin-top: 0px; margin-left: 0px; }
+        25%  {margin-top: 0px; margin-left: 30%; } */
+        /* 50%  {margin-top: 0px; margin-left: 50%; } */
+        /* 75%  {margin-top: 0px; margin-left: 0px; } */
+        /* 100% {margin-top: 0px; margin-left: 0px; }
+       } */
+       .spanclass1{
+        font-size: 32px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: brown;
+        background-color: yellow;
+        animation: videoAni2 1s infinite;
+       }
+    </style>
+</head>
+<body>
+    <div class="firstAnimationDiv">
+       <span class="spanclass1">Only Available Food is showing...</span> <br>
+      <!-- <video  class="videoAnimation" src="https://player.vimeo.com/external/311125366.sd.mp4?s=ff9fada25d87bfd48ce112e4ce8217837074d162&profile_id=164&oauth2_token_id=57447761" width="400" height="300" autoplay controls muted loop></video> -->
+      <br><br>
+    </div>
+    <div class="parentDiv">
+       <div class="leftDiv">
+         
+       </div>
+   
+        <div class="rightDiv">
+            
+        </div>
+
+    </div>
+    <div class="finalDiv"></div>
+    <div class="finaldiv3"></div>
+    <div class="finalDiv2"></div>
+</body>
+<script>
+
+   var flagfinal = false ;
+    
+  setTimeout(function(){
+
+
+    var promise1 = new Promise(function(resolve,reject){
+        
+    ProductDetails = [
+        {
+            id : 1 ,
+            url : "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=600" ,
+            itemName : "Chocolate Cake" ,
+            price : 35 
+        },
+        {
+            id : 2 ,
+            url : "https://t3.ftcdn.net/jpg/03/21/94/24/240_F_321942436_6VqO2RXTsHEkyERWvPYuCNsdzyhwNGhJ.jpg" ,
+            itemName : "Aloo Paratha" ,
+            price : 40 
+        },
+        {
+            id : 3 ,
+            url : "https://t4.ftcdn.net/jpg/06/66/53/19/240_F_666531990_RmAu9kif0eWTyhvN4mEkmSUduAmdISJ1.jpg" ,
+            itemName : "Full Thali" ,
+            price : 160 
+        },
+        {
+            id : 4 ,
+            url : "https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=600" ,
+            itemName : "Dosa" ,
+            price : 60 
+        },
+        {
+            id : 5 ,
+            url : "https://t4.ftcdn.net/jpg/01/00/38/29/240_F_100382923_aF1dtWfSPMwTS9SHAXV3jMz82u6myceO.jpg" ,
+            itemName : "Chhole Chawal" ,
+            price : 40 
+        }
+    ];
+    
+    resolve(ProductDetails) ;
+
+    }) ;
+
+    var promise2 = new Promise(function(resolve,reject){
+        
+    ProductDetails2 = [
+        {
+            id : 1111,
+            url : "https://t4.ftcdn.net/jpg/01/67/16/47/240_F_167164733_ogLJN8aKo4yvXR8a7nWeewOq2wfbxQhb.jpg" ,
+            itemName : "Chhole Bhature" ,
+            price : 50
+        },
+        {
+            id : 1112,
+            url : "https://cdn.pixabay.com/photo/2020/05/10/11/55/idly-5153749_640.jpg" ,
+            itemName : "Idli Sambhar" ,
+            price : 30
+        },
+        {
+            id : 1113,
+            url : "https://cdn.pixabay.com/photo/2017/10/01/08/36/food-2804569_640.jpg" ,
+            itemName : "Golgappe" ,
+            price : 20
+        },
+        {
+            id : 1114,
+            url : "https://images.pexels.com/photos/4449068/pexels-photo-4449068.jpeg?auto=compress&cs=tinysrgb&w=600" ,
+            itemName : "Samosa" ,
+            price : 25
+        },
+        {
+            id : 1115 ,
+            url : "https://t3.ftcdn.net/jpg/05/29/17/74/240_F_529177437_COBaZeml7VxUiIla58BUY5M1Tt5VDzuj.jpg" ,
+            itemName : "Chhole Kulche" ,
+            price : 40 
+        }
+    ]
+    resolve(ProductDetails2) ;
+
+    });
+
+    var finaldiv = document.querySelector(".finalDiv") ;
+    var leftdiv = document.querySelector(".leftDiv") ;
+    var rightdiv = document.querySelector(".rightDiv") ;
+    var parentdiv = document.querySelector(".parentDiv") ;
+    var finaldiv2 = document.querySelector(".finalDiv2") ;
+    var finaldiv3 = document.querySelector(".finaldiv3") ;
+
+    promise1.then(function(ProductDetails){
+        
+    ProductDetails.forEach(function(ele){
+
+        var leftdivFirst = document.createElement("div") ;
+        leftdivFirst.setAttribute("class","leftDiv1") ;
+        var img1 = document.createElement("img") ;
+        img1.setAttribute("src",ele.url) ;
+        var div2 = document.createElement("div") ;
+        var p1 = document.createElement("p") ;
+        p1.innerHTML = ele.itemName ;
+        var p2 = document.createElement("p") ;
+        p2.innerHTML = "Rs "+ ele.price ;
+        var input1 = document.createElement("input") ;
+        input1.setAttribute("type","checkbox") ;
+        input1.setAttribute("id",`id${ele.id}`) ;
+       // input1.setAttribute("checked","false") ;
+        div2.append(p1,p2,input1) ;
+        input1.addEventListener("change",function(event){
+            event.preventDefault();
+            //input1.setAttribute("checked","true") ;
+            let detailArr = JSON.parse(sessionStorage.getItem("food")) || [] ;
+            let obj = {
+                url : ele.url ,
+                itemName : ele.itemName ,
+                id : ele.id 
+            }
+            detailArr.push(obj) ;
+            sessionStorage.setItem("food",JSON.stringify(detailArr)) ;
+             ;
+            
+        })
+        leftdivFirst.append(img1,div2) ;
+        leftdiv.append(leftdivFirst) ;
+    });
+        
+        console.log("promise1 ",promise1) ;
+    });
+
+    promise2.then(function(ProductDetails2){
+        
+    ProductDetails2.forEach(function(ele){
+        var rightdivFirst = document.createElement("div") ;
+        rightdivFirst.setAttribute("class","rightDiv1") ;
+        var img2 = document.createElement("img") ;
+        img2.setAttribute("src",ele.url) ;
+        var div3 = document.createElement("div") ;
+        var p3 = document.createElement("p") ;
+        p3.innerHTML = ele.itemName ;
+        var p4 = document.createElement("p") ;
+        p4.innerHTML = "Rs "+ ele.price ;
+        var input2 = document.createElement("input") ;
+        input2.setAttribute("type","checkbox") ;
+        input2.setAttribute("id",`id${ele.id}`) ;
+        div3.append(p3,p4,input2) ;
+        input2.addEventListener("change",function(event){
+            event.preventDefault();
+            let detailArr = JSON.parse(sessionStorage.getItem("food")) || [] ;
+            let obj = {
+                url : ele.url ,
+                itemName : ele.itemName ,
+                id : ele.id 
+            }
+            detailArr.push(obj) ;
+            sessionStorage.setItem("food",JSON.stringify(detailArr)) ;
+            // if(input2.checked == true) input2.checked=false
+            if(input2.style.checked == true) input2.style.checked = false ;
+        })
+        rightdivFirst.append(img2,div3) ;
+        rightdiv.append(rightdivFirst) ;
+    });
+     
+    console.log("promise2 ",promise2) ;
+    });
+    var flagright = true ;
+    var count2 =1 ;
+   var btnFinal = document.createElement("button") ;
+   btnFinal.innerText = "Order Food"  ;
+   btnFinal.setAttribute("class","btnsubmit") ;
+   finaldiv.append(btnFinal) ;
+   btnFinal.addEventListener("click",function(addEventListener){
+    event.preventDefault() ;
+   
+    function prepareFood(){
+
+    setTimeout(function(){
+        
+        let v1 = document.createElement("video") ;
+        v1.setAttribute("src","https://cdn.pixabay.com/vimeo/537966388/coffee-71288.mp4?width=1280&hash=934c689761aecf244c26fa01bf11743d99797f77");
+        v1.setAttribute("width","400px") ;
+        v1.setAttribute("height","400px") ;
+        v1.setAttribute("autoplay",true) ;
+        v1.setAttribute("controls",true) ;
+        v1.setAttribute("muted",true) ;
+        v1.setAttribute("class","v11") ;
+      
+        finaldiv3.append(v1) ;
+       
+    },0);
+    }
+      
+    setTimeout(function(){
+        finaldiv3.innerHTML="";
+
+        document.querySelector(".finalDiv2").append(document.createElement("hr")) ;
+      flagright = true ;
+      var divnew1 = document.createElement("div") ;
+      divnew1.setAttribute("class","alrtpage") ;
+      let detailArr = JSON.parse(sessionStorage.getItem("food")) || [] ;
+      detailArr.forEach(function(ele){
+        prepareFood() ;
+         document.querySelector(`#id${ele.id}`).checked=false ;
+        setTimeout(function(){
+            finaldiv3.innerHTML=""; 
+            finaldiv2.innerHTML = "" ;
+        let divfood1 = document.createElement("div") ;
+        let imgfood1 = document.createElement("img") ;
+        let pfood1 = document.createElement("p") ;
+        let pfood2 = document.createElement("p") ;
+        // if(flagright){
+        pfood2.innerHTML = "<br> Token No : "+count2 + "<br>" ;
+         count2++ ;
+        //  flagright=false ;
+        // }
+        // else { pfood2.innerHTML = "" ; }
+        pfood2.style.float = "right" ;
+        imgfood1.setAttribute("src",ele.url) ;
+        imgfood1.setAttribute("width","300px") ;
+        imgfood1.setAttribute("height","300px") ;
+        divfood1.setAttribute("text-align","center") ;
+        pfood1.innerHTML= "Food : "+ele.itemName +" <br> Order id : "+ ele.id ;
+        divfood1.append(pfood2,imgfood1,pfood1) ;
+        divnew1.append(divfood1) ;
+        
+    },2000);
+      })
+      setTimeout(function(){
+        
+      finaldiv2.append(divnew1) ;
+      detailArr = [] ;
+      sessionStorage.setItem("food",JSON.stringify(detailArr)) ;
+      
+    },2000);
+      
+    },3000) ;
+     
+   })
+ 
+  flagfinal = true ;
+  if(flagfinal){
+      clearInnerhtmlofAnimation() ; 
+  }
+   
+},9000) ;
+
+   function clearInnerhtmlofAnimation(){
+    document.querySelector(".firstAnimationDiv").innerHTML = "" ;
+   }
+
+</script>
+</html>
